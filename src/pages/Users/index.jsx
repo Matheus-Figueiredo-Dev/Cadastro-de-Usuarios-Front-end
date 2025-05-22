@@ -16,6 +16,8 @@ import {
 export function Users() {
   const [users, setUsers] = useState([]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     async function loadUsers() {
       const { data } = await api.get('/users');
@@ -24,7 +26,12 @@ export function Users() {
     loadUsers();
   }, []);
 
-  const navigate = useNavigate();
+  async function deleteUser(id) {
+    await api.delete(`/users/${id}`);
+
+    const updtadedUsers = users.filter((user) => user.id !== id);
+    setUsers(updtadedUsers);
+  }
 
   return (
     <Container>
@@ -41,7 +48,11 @@ export function Users() {
               <p>{user.age}</p>
               <p>{user.email}</p>
             </div>
-            <TrashIcons src={Trash} alt="lixeira" />
+            <TrashIcons
+              src={Trash}
+              alt="lixeira"
+              onClick={() => deleteUser(user.id)}
+            />
           </CardUsers>
         ))}
       </ContainerUsers>
