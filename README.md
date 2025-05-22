@@ -37,26 +37,39 @@ As funcionalidades de edição de usuários serão implementadas em breve.
 
 ![image](https://github.com/user-attachments/assets/f484ee4f-5687-41c0-807b-4aab568fcca6)
 
-## ⚙️ Como executar o projeto
+:
 
-1. **Clone o repositório**:
+🚀 Como executar o projeto
+Clone o repositório:
 
-```bash
+bash
+Copiar
+Editar
 git clone https://github.com/Matheus-Figueiredo-Dev/Cadastro-de-usuarios-front-end.git
-cd nome-do-repo-frontend
+cd Cadastro-de-usuarios-front-end
 Instale as dependências:
+
+bash
+Copiar
+Editar
 npm install
-
 Configure a URL da API:
-No arquivo src/services/api.js, atualize a baseURL com o endereço da sua API:
 
+Edite o arquivo src/services/api.js e atualize a baseURL com o endereço da sua API (local ou em produção):
+
+js
+Copiar
+Editar
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3002' // ou a URL da sua API hospedada
+  baseURL: 'http://localhost:3002' // substitua pela URL da API se estiver em produção
 });
 
 export default api;
 Inicie a aplicação:
 
+bash
+Copiar
+Editar
 npm run dev
