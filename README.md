@@ -1,12 +1,62 @@
-# React + Vite
+👤 Sistema de Cadastro de Usuários – Front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o front-end de um sistema completo de cadastro de usuários, desenvolvido em **React**. A aplicação permite interagir com a API para realizar operações de cadastro, listagem e exclusão de usuários.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- **React** – Biblioteca JavaScript para construção de interfaces
+- **Vite** – Ferramenta de build rápida para projetos React
+- **Styled-components** – Estilização de componentes via CSS-in-JS
+- **Axios** – Cliente HTTP para requisições à API
+- **React Hooks**:
+  - `useState`
+  - `useEffect`
+  - `useRef`
+  - `useNavigate` (via `react-router-dom`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🖥 Funcionalidades
+
+- 📄 Cadastro de usuários
+- 📋 Listagem de usuários cadastrados
+- 🗑️ Exclusão de usuários
+- ✨ Integração com back-end via API REST
+
+---
+
+💡 Observações
+O projeto foi construído com o objetivo de praticar React + integração com API back-end.
+
+As funcionalidades de edição de usuários serão implementadas em breve.
+
+🖼 Demonstração
+![image](https://github.com/user-attachments/assets/6eb37fdc-d8f9-4c83-b594-81f85aa47335)
+
+![image](https://github.com/user-attachments/assets/f484ee4f-5687-41c0-807b-4aab568fcca6)
+
+## ⚙️ Como executar o projeto
+
+1. **Clone o repositório**:
+
+```bash
+git clone https://github.com/Matheus-Figueiredo-Dev/Cadastro-de-usuarios-front-end.git
+cd nome-do-repo-frontend
+Instale as dependências:
+npm install
+
+Configure a URL da API:
+No arquivo src/services/api.js, atualize a baseURL com o endereço da sua API:
+
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'http://localhost:3002' // ou a URL da sua API hospedada
+});
+
+export default api;
+Inicie a aplicação:
+
+npm run dev
