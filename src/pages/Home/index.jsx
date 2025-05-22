@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DefaultButton from '../../components/Button';
 import DefaultTopBackground from '../../components/TopBackground';
 import api from '../../services/api';
@@ -16,12 +17,15 @@ function Home() {
   const inputAge = useRef();
   const inputEmail = useRef();
 
+  const navigate = useNavigate();
+
   async function registerNewUser() {
     const data = await api.post('/users', {
       name: inputName.current.value,
       age: Number.parseInt(inputAge.current.value),
       email: inputEmail.current.value,
     });
+    navigate('/lista-de-usuarios');
   }
 
   return (
@@ -71,7 +75,12 @@ function Home() {
             Cadastrar Usuário
           </DefaultButton>
         </Form>
-        <DefaultButton type="button">Ver Lista de Usuários</DefaultButton>
+        <DefaultButton
+          type="button"
+          onClick={() => navigate('/lista-de-usuarios')}
+        >
+          Ver Lista de Usuários
+        </DefaultButton>
       </Container>
     </>
   );
