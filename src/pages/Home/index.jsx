@@ -1,16 +1,10 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DefaultButton from '../../components/Button';
+import DefaultTitle from '../../components/Title';
 import DefaultTopBackground from '../../components/TopBackground';
 import api from '../../services/api';
-import {
-  Container,
-  ContainerInputs,
-  Form,
-  Input,
-  InputLabel,
-  Title,
-} from './styles';
+import { Container, ContainerInputs, Form, Input, InputLabel } from './styles';
 
 function Home() {
   const inputName = useRef();
@@ -33,7 +27,7 @@ function Home() {
       <Container>
         <DefaultTopBackground />
         <Form>
-          <Title>Cadastro de Usuários</Title>
+          <DefaultTitle>Cadastro de Usuários</DefaultTitle>
           <ContainerInputs>
             <div>
               <InputLabel>
